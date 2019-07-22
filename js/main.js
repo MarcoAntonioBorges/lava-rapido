@@ -366,7 +366,7 @@ confirmacaoAgendamento.addEventListener('click', function(){
 }); 
 
 function enviarConfirmacaoAgendamento(){
-	firebase.database().ref().child('dados').push(DADOS_CLI);
+	fazerReserva(DADOS_CLI)
 	console.log('Confirmacao feita para o servico de lava rapido');
 		Swal.fire({
 			title: 'Sucesso!',

@@ -274,10 +274,23 @@ jQuery(document).ready(function($) {
 
 */
 
+var DADOS_CLI = null;
+
 function pegaElementosFormAgendamento(){
 	var elementos = new Object();
 	elementos['nome_completo'] = $("#ag_nome_completo").val().trim();
 	elementos['cpf'] = $("#ag_cpf").val().trim();
+	elementos['telefone'] = $("#ag_telefone_contato").val().trim();
+	elementos['email'] = $('#ag_email_contato').val().trim();
+	elementos['modelo_carro'] = $('#ag_modelo_carro').val().trim();
+	elementos['placa'] = $('#ag_placa_carro').val().trim();
+	
+	//Elementos diferentes de input
+	elementos['horario'] = $('#ag_horario').val();
+	//console.log(elementos['horario']);
+	
+	elementos['forma_pagamento'] = $('#ag_forma_pagamento').val();
+
 
 	return elementos
 }
@@ -302,6 +315,42 @@ function validaForm(){
 		erroFormAgendamento("CPF")
 		return false
 	}
+	if(elementos['telefone'] == ''){
+		erroFormAgendamento("Telefone")
+		return false
+	}
+
+	//Email nao eh obrigatorio
+	// if(elementos['email'] == ''){
+	// 	erroFormAgendamento("E-mail")
+	// 	return false
+	// }
+	if(elementos['modelo_carro'] == ''){
+		erroFormAgendamento("Modelo do carro")
+		return false
+	}
+	if(elementos['placa'] == ''){
+		erroFormAgendamento("Placa do carro")
+		return false
+	}
+	if(elementos['horario'] == ''){
+		erroFormAgendamento("Horario")
+		return false
+	}
+	if(elementos['horario'] == $('#ag_horario')[0].options[0].text){
+		erroFormAgendamento("Horario")
+		return false
+	}
+	if(elementos['forma_pagamento'] == ''){
+		erroFormAgendamento("Forma de pagamento")
+		return false
+	}
+	if(elementos['forma_pagamento'] == $('#ag_forma_pagamento')[0].options[0].text){
+		erroFormAgendamento("Forma de pagamento")
+		return false
+	}
+
+	DADOS_CLI = elementos;
 
 	return true
 }
@@ -309,14 +358,31 @@ function validaForm(){
 var confirmacaoAgendamento = document.querySelector("#confirmacao-agendamento");
 confirmacaoAgendamento.addEventListener('click', function(){
 	if(validaForm()){
-		console.log('Confirmacao feita para o servico de lava rapido');
-		Swal.fire({
-			title: 'Sucesso!',
-			text: 'Do you want to continue',
-			type: 'success',
-			confirmButtonText: 'Cool'
-		})
+		enviarConfirmacaoAgendamento();
+		limparFormulario();
 	}else{
 		console.log('Preencha os campos necesarios');
 	}
 }); 
+
+function enviarConfirmacaoAgendamento(){
+	firebase.database().ref().child('dados').push(DADOS_CLI);
+	console.log('Confirmacao feita para o servico de lava rapido');
+		Swal.fire({
+			title: 'Sucesso!',
+			text: 'Obrigado!! sua hora foi agendada.',
+			type: 'success',
+			confirmButtonText: 'OK'
+		})
+}
+
+function limparFormulario(){
+	$("#ag_nome_completo").val("");
+	$("#ag_cpf").val("");
+	$("#ag_telefone_contato").val("");
+	$('#ag_email_contato').val("");
+	$('#ag_modelo_carro').val("");
+	$('#ag_placa_carro').val("");
+	$('#ag_horario').val($('#ag_horario')[0].options[0].text);
+	$('#ag_forma_pagamento').val($('#ag_forma_pagamento')[0].options[0].text);
+}

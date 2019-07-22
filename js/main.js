@@ -249,3 +249,22 @@ jQuery(document).ready(function($) {
   siteScroll();
 
 });
+
+/*
+-23.6480098,
+-46.8175628
+*/
+function initMap() {
+  var myLatLng = {lat: -23.6480188, lng: -46.8175828};
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 15,
+    center: myLatLng
+  });
+
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Hello World!'
+  });
+}

@@ -1743,3 +1743,8 @@ h1, h2, h3, h4, h5,
 .tamanho-imagem-produto{
   height: 270px !important;
 }
+
+#map{
+  height: 500px;
+  width: auto;
+}

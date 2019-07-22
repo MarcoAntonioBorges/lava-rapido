@@ -254,17 +254,22 @@ jQuery(document).ready(function($) {
 -23.6480098,
 -46.8175628
 */
-function initMap() {
-  var myLatLng = {lat: -23.6480188, lng: -46.8175828};
+// function initMap() {
+//   var myLatLng = {lat: -23.6480188, lng: -46.8175828};
 
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 15,
-    center: myLatLng
-  });
+//   var map = new google.maps.Map(document.getElementById('map'), {
+//     zoom: 15,
+//     center: myLatLng
+//   });
 
-  var marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-    title: 'Hello World!'
-  });
-}
+//   var marker = new google.maps.Marker({
+//     position: myLatLng,
+//     map: map,
+//     title: 'Hello World!'
+//   });
+// }
+
+/*
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3654.7810823132972!2d-46.8175628!3d-23.6480098!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce54a7e3ea9805%3A0xa3d787bf2c7ac2bd!2sR.+Poti%2C+188+-+Parque+Pirajussara%2C+Embu+das+Artes+-+SP%2C+05576-100!5e0!3m2!1spt-BR!2sbr!4v1563822670681!5m2!1spt-BR!2sbr" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+*/

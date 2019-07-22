@@ -1735,3 +1735,11 @@ h1, h2, h3, h4, h5,
   transition: .5s all;
   color: #46ddb0 !important;
 }
+
+.cor-default{
+  color: #46ddb0;
+}
+
+.tamanho-imagem-produto{
+  height: 270px !important;
+}

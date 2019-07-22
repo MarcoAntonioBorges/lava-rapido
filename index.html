@@ -79,7 +79,8 @@
 
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li><a href="#home-section" class="nav-link">Home</a></li>
-                <li><a href="#about-section" class="nav-link">Local <i class="fa fa-map-marker" aria-hidden="true"></i></a></li>
+                <li><a href="#about-section" class="nav-link">Local <i class="fa fa-map-marker"
+                      aria-hidden="true"></i></a></li>
                 <li><a href="#team-section" class="nav-link">Equipe</a></li>
                 <li><a href="#services-section" class="nav-link">Serviços</a></li>
                 <!-- <li><a href="#testimonials-section" class="nav-link">Avaliações</a></li> -->
@@ -113,7 +114,8 @@
                 <p class="mb-5">Agende já seu horário e traga seu carro. Funcionamos de Segunda-feira a Sexta-Feira das
                   09:00 ás 18:00 e Final de Semana das 10:00 ás 16:00.</p>
                 <div>
-                  <a href="#" class="btn btn-primary mr-2 mb-2">Agendar</a>
+                  <a href="#" class="btn btn-primary mr-2 mb-2" data-toggle="modal"
+                    data-target="#exampleModal">Agendar</a>
                 </div>
               </div>
             </div>
@@ -123,13 +125,85 @@
       </div>
     </div>
 
+    <div class="section-agendar" id="agendar-section">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Formulario de agendamento</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Nome completo" id="ag_nome_completo">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="CPF" id="ag_cpf">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Telefone de Contato" id="ag_telefone_contato">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="E-mail de Contato" id="ag_email_contato">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Modelo do carro" id="ag_modelo_carro">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Placa do carro" id="ag_modelo_carro">
+              </div>
+              <select class="form-control" id="exampleFormControlSelect1" id="ag_horario">
+                <option>Escolha um horario</option>
+                <option>10:30</option>
+                <option>11:00</option>
+                <option>11:30</option>
+                <option>12:00</option>
+              </select>
+              <br>
+              <hr>
+              <h2>Forma de Pagamento</h2>
+              <select class="form-control" id="exampleFormControlSelect1" id="ag_forma_pagamento">
+                <option>Escolha a forma de pagamento</option>
+                <option>No Local</option>
+                <option>Cartao de Credito</option>
+              </select>
+              <div class="classe-pagseguro">
+                <!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
+                <form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post"
+                  onsubmit="PagSeguroLightbox(this); return false;">
+                  <!-- NÃO EDITE OS COMANDOS DAS LINHAS ABAIXO -->
+                  <input type="hidden" name="code" value="B6EB419E3333C971145C5F993C456D21" />
+                  <input type="hidden" name="iot" value="button" />
+                  <input type="image"
+                    src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-comprar-assina.gif"
+                    name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+                </form>
+                <!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Sair</button>
+            <button type="button" class="btn btn-primary" id="confirmacao-agendamento">Confirmar agendamento</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <div class="site-section" id="about-section">
       <div class="container">
         <div class="row align-items-lg-center">
           <div class="col-md-6 mb-5 mb-lg-0 position-relative">
             <!-- <img src="images/about_1.jpg" class="img-fluid" alt="Image"> -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3654.7810823132972!2d-46.8175628!3d-23.6480098!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce54a7e3ea9805%3A0xa3d787bf2c7ac2bd!2sR.+Poti%2C+188+-+Parque+Pirajussara%2C+Embu+das+Artes+-+SP%2C+05576-100!5e0!3m2!1spt-BR!2sbr!4v1563822670681!5m2!1spt-BR!2sbr" class="maps" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3654.7810823132972!2d-46.8175628!3d-23.6480098!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce54a7e3ea9805%3A0xa3d787bf2c7ac2bd!2sR.+Poti%2C+188+-+Parque+Pirajussara%2C+Embu+das+Artes+-+SP%2C+05576-100!5e0!3m2!1spt-BR!2sbr!4v1563822670681!5m2!1spt-BR!2sbr"
+              class="maps" frameborder="0" style="border:0" allowfullscreen></iframe>
             <!-- <div class="experience">
               <span class="year">50 years</span>
               <span class="caption">of experience</span>
@@ -149,68 +223,69 @@
       </div>
     </div>
 
-    <section class="site-section border-bottom" id="team-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-12 text-center">
-            <h3 class="section-sub-title">Team</h3>
-            <h2 class="section-title mb-3">Our Team</h2>
+
+  <section class="site-section border-bottom" id="team-section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12 text-center">
+          <h3 class="section-sub-title">Team</h3>
+          <h2 class="section-title mb-3">Our Team</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
+          <div class="person text-center">
+            <img src="images/person_2.jpg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
+            <h3>John Rooster</h3>
+            <p class="position text-muted">Co-Founder, President</p>
+            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi at consequatur unde
+              molestiae quidem provident voluptatum deleniti quo iste error eos est praesentium distinctio cupiditate
+              tempore suscipit inventore deserunt tenetur.</p>
+            <ul class="ul-social-circle">
+              <li><a href="#"><span class="icon-facebook"></span></a></li>
+              <li><a href="#"><span class="icon-twitter"></span></a></li>
+              <li><a href="#"><span class="icon-linkedin"></span></a></li>
+              <li><a href="#"><span class="icon-instagram"></span></a></li>
+            </ul>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
-            <div class="person text-center">
-              <img src="images/person_2.jpg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
-              <h3>John Rooster</h3>
-              <p class="position text-muted">Co-Founder, President</p>
-              <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi at consequatur unde
-                molestiae quidem provident voluptatum deleniti quo iste error eos est praesentium distinctio cupiditate
-                tempore suscipit inventore deserunt tenetur.</p>
-              <ul class="ul-social-circle">
-                <li><a href="#"><span class="icon-facebook"></span></a></li>
-                <li><a href="#"><span class="icon-twitter"></span></a></li>
-                <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                <li><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
+        <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
+          <div class="person text-center">
+            <img src="images/person_3.jpg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
+            <h3>Tom Sharp</h3>
+            <p class="position text-muted">Co-Founder, COO</p>
+            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi at consequatur unde
+              molestiae quidem provident voluptatum deleniti quo iste error eos est praesentium distinctio cupiditate
+              tempore suscipit inventore deserunt tenetur.</p>
+            <ul class="ul-social-circle">
+              <li><a href="#"><span class="icon-facebook"></span></a></li>
+              <li><a href="#"><span class="icon-twitter"></span></a></li>
+              <li><a href="#"><span class="icon-linkedin"></span></a></li>
+              <li><a href="#"><span class="icon-instagram"></span></a></li>
+            </ul>
           </div>
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
-            <div class="person text-center">
-              <img src="images/person_3.jpg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
-              <h3>Tom Sharp</h3>
-              <p class="position text-muted">Co-Founder, COO</p>
-              <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi at consequatur unde
-                molestiae quidem provident voluptatum deleniti quo iste error eos est praesentium distinctio cupiditate
-                tempore suscipit inventore deserunt tenetur.</p>
-              <ul class="ul-social-circle">
-                <li><a href="#"><span class="icon-facebook"></span></a></li>
-                <li><a href="#"><span class="icon-twitter"></span></a></li>
-                <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                <li><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="300">
-            <div class="person text-center">
-              <img src="images/person_4.jpg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
-              <h3>Winston Hodson</h3>
-              <p class="position text-muted">Marketing</p>
-              <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi at consequatur unde
-                molestiae quidem provident voluptatum deleniti quo iste error eos est praesentium distinctio cupiditate
-                tempore suscipit inventore deserunt tenetur.</p>
-              <ul class="ul-social-circle">
-                <li><a href="#"><span class="icon-facebook"></span></a></li>
-                <li><a href="#"><span class="icon-twitter"></span></a></li>
-                <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                <li><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="300">
+          <div class="person text-center">
+            <img src="images/person_4.jpg" alt="Image" class="img-fluid rounded-circle w-50 mb-5">
+            <h3>Winston Hodson</h3>
+            <p class="position text-muted">Marketing</p>
+            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi at consequatur unde
+              molestiae quidem provident voluptatum deleniti quo iste error eos est praesentium distinctio cupiditate
+              tempore suscipit inventore deserunt tenetur.</p>
+            <ul class="ul-social-circle">
+              <li><a href="#"><span class="icon-facebook"></span></a></li>
+              <li><a href="#"><span class="icon-twitter"></span></a></li>
+              <li><a href="#"><span class="icon-linkedin"></span></a></li>
+              <li><a href="#"><span class="icon-instagram"></span></a></li>
+            </ul>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- <section class="site-section">
+  <!-- <section class="site-section">
       <div class="container">
         <div class="row mb-5">
           <div class="col-12">
@@ -265,48 +340,48 @@
 
 
 
-    <section class="site-section border-bottom bg-light" id="services-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-12 text-center">
-            <h3 class="section-sub-title">Serviços</h3>
-            <h2 class="section-title mb-3">Nosso Serviço</h2>
+  <section class="site-section border-bottom bg-light" id="services-section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12 text-center">
+          <h3 class="section-sub-title">Serviços</h3>
+          <h2 class="section-title mb-3">Nosso Serviço</h2>
+        </div>
+      </div>
+      <div class="row align-items-stretch">
+        <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
+          <div class="unit-4 d-flex">
+            <div class="unit-4-icon mr-4"><span class="text-primary icon-business_center"></span></div>
+            <div>
+              <h3>Trabalho em equipe</h3>
+              <p>Nosso time está totalmente empenhado para lavar o seu veiculo.</p>
+              <!-- <p><a href="#">Learn More</a></p> -->
+            </div>
           </div>
         </div>
-        <div class="row align-items-stretch">
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
-            <div class="unit-4 d-flex">
-              <div class="unit-4-icon mr-4"><span class="text-primary icon-business_center"></span></div>
-              <div>
-                <h3>Trabalho em equipe</h3>
-                <p>Nosso time está totalmente empenhado para lavar o seu veiculo.</p>
-                <!-- <p><a href="#">Learn More</a></p> -->
-              </div>
+        <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="unit-4 d-flex">
+            <div class="unit-4-icon mr-4"><span class="text-primary icon-beenhere"></span></div>
+            <div>
+              <h3>Melhores produtos</h3>
+              <p>Utilizamos os melhores produtos disponiveis para lavagem de veiculos.</p>
+              <!-- <p><a href="#">Learn More</a></p> -->
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="unit-4 d-flex">
-              <div class="unit-4-icon mr-4"><span class="text-primary icon-beenhere"></span></div>
-              <div>
-                <h3>Melhores produtos</h3>
-                <p>Utilizamos os melhores produtos disponiveis para lavagem de veiculos.</p>
-                <!-- <p><a href="#">Learn More</a></p> -->
-              </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="unit-4 d-flex">
+            <div class="unit-4-icon mr-4"><span class="text-primary icon-av_timer"></span></div>
+            <div>
+              <h3>Ágil no tempo de lavagem</h3>
+              <p>Lávamos seu veiculo de forma ágil.</p>
+              <!-- <p><a href="#">Learn More</a></p> -->
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="unit-4 d-flex">
-              <div class="unit-4-icon mr-4"><span class="text-primary icon-av_timer"></span></div>
-              <div>
-                <h3>Ágil no tempo de lavagem</h3>
-                <p>Lávamos seu veiculo de forma ágil.</p>
-                <!-- <p><a href="#">Learn More</a></p> -->
-              </div>
-            </div>
-          </div>
+        </div>
 
 
-          <!-- <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="300">
+        <!-- <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="300">
             <div class="unit-4 d-flex">
               <div class="unit-4-icon mr-4"><span class="text-primary icon-beenhere"></span></div>
               <div>
@@ -339,33 +414,33 @@
               </div>
             </div>
           </div> -->
-          <h3 class="cor-default">Nossa tabela de preços</h3>
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Veiculo</th>
-                <th>Quantidade</th>
-                <th>Preço</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td scope="row">Qualquer categoria</td>
-                <td>1x</td>
-                <td>R$20,00</td>
-              </tr>
-              <tr>
-                <td scope="row">Qualquer categoria</td>
-                <td>2x</td>
-                <td>R$37,00</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <h3 class="cor-default">Nossa tabela de preços</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Veiculo</th>
+              <th>Quantidade</th>
+              <th>Preço</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="row">Qualquer categoria</td>
+              <td>1x</td>
+              <td>R$20,00</td>
+            </tr>
+            <tr>
+              <td scope="row">Qualquer categoria</td>
+              <td>2x</td>
+              <td>R$37,00</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- <section class="site-section testimonial-wrap" id="testimonials-section">
+  <!-- <section class="site-section testimonial-wrap" id="testimonials-section">
       <div class="container">
         <div class="row mb-5">
           <div class="col-12 text-center">
@@ -441,7 +516,7 @@
 
       </div>
     </section> -->
-    <!-- 
+  <!-- 
     <section class="site-section" id="about-section">
       <div class="container">
         <div class="row mb-5">
@@ -489,191 +564,190 @@
 
 
 
-    <section class="site-section" id="blog-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-12 text-center">
-            <h3 class="section-sub-title">Produtos</h3>
-            <h2 class="section-title mb-3">Nossos outros Produtos</h2>
+  <section class="site-section" id="blog-section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12 text-center">
+          <h3 class="section-sub-title">Produtos</h3>
+          <h2 class="section-title mb-3">Nossos outros Produtos</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+          <div class="h-entry">
+            <img src="images/produto_oculos_oakley.jpg" alt="Image" class="img-fluid tamanho-imagem-produto">
+            <h2 class="font-size-regular"><a href="#">Oculos da oakley</a>
+            </h2>
+            <div class="meta mb-4">R$200,00<span class="mx-2"></div>
+            <p>[Descrição do produto].</p>
+            <p><a href="#">Comprar</a></p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+          <div class="h-entry">
+            <img src="images/produto_relogio_digital.jpg" alt="Image" class="img-fluid tamanho-imagem-produto">
+            <h2 class="font-size-regular"><a href="#">Relogio digital</a>
+            </h2>
+            <div class="meta mb-4">R$130,00</div>
+            <p>[Descrição do produto].</p>
+            <p><a href="#">Comprar</a></p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
+          <div class="h-entry">
+            <img src="images/produto_tenis_nike.jpg" alt="Image" class="img-fluid tamanho-imagem-produto">
+            <h2 class="font-size-regular"><a href="#">Tenis da Nike</a>
+            </h2>
+            <div class="meta mb-4">R$250,00</div>
+            <p>[Descrição do produto].</p>
+            <p><a href="#">Comprar</a></p>
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-            <div class="h-entry">
-              <img src="images/produto_oculos_oakley.jpg" alt="Image" class="img-fluid tamanho-imagem-produto">
-              <h2 class="font-size-regular"><a href="#">Oculos da oakley</a>
-              </h2>
-              <div class="meta mb-4">R$200,00<span class="mx-2"></div>
-              <p>[Descrição do produto].</p>
-              <p><a href="#">Comprar</a></p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <section class="site-section bg-light" id="contact-section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12 text-center">
+          <h3 class="section-sub-title">Contato</h3>
+          <h2 class="section-title mb-3">Nossos contatos</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-7 mb-5">
+
+
+
+          <form action="#" class="p-5 bg-white">
+
+            <h2 class="h4 text-black mb-5">Formulário de Contato</h2>
+
+            <div class="row form-group">
+              <div class="col-md-6 mb-3 mb-md-0">
+                <label class="text-black" for="fname">Nome</label>
+                <input type="text" id="fname" class="form-control">
+              </div>
+              <div class="col-md-6">
+                <label class="text-black" for="lname">Sobrenome</label>
+                <input type="text" id="lname" class="form-control">
+              </div>
             </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-            <div class="h-entry">
-              <img src="images/produto_relogio_digital.jpg" alt="Image" class="img-fluid tamanho-imagem-produto">
-              <h2 class="font-size-regular"><a href="#">Relogio digital</a>
-              </h2>
-              <div class="meta mb-4">R$130,00</div>
-              <p>[Descrição do produto].</p>
-              <p><a href="#">Comprar</a></p>
+
+            <div class="row form-group">
+
+              <div class="col-md-12">
+                <label class="text-black" for="email">Email</label>
+                <input type="email" id="email" class="form-control">
+              </div>
             </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
-            <div class="h-entry">
-              <img src="images/produto_tenis_nike.jpg" alt="Image" class="img-fluid tamanho-imagem-produto">
-              <h2 class="font-size-regular"><a href="#">Tenis da Nike</a>
-              </h2>
-              <div class="meta mb-4">R$250,00</div>
-              <p>[Descrição do produto].</p>
-              <p><a href="#">Comprar</a></p>
+
+            <div class="row form-group">
+
+              <div class="col-md-12">
+                <label class="text-black" for="subject">Assunto</label>
+                <input type="subject" id="subject" class="form-control">
+              </div>
             </div>
+
+            <div class="row form-group">
+              <div class="col-md-12">
+                <label class="text-black" for="message">Mensagem</label>
+                <textarea name="message" id="message" cols="30" rows="7" class="form-control"
+                  placeholder="Escreva alguma notação ou pergunta..."></textarea>
+              </div>
+            </div>
+
+            <div class="row form-group">
+              <div class="col-md-12">
+                <input type="submit" value="Enviar mensagem" class="btn btn-primary btn-md text-white btn-submit-form">
+              </div>
+            </div>
+
+
+          </form>
+        </div>
+        <div class="col-md-5">
+
+          <div class="p-4 mb-3 bg-white">
+            <p class="mb-0 font-weight-bold">Endereço</p>
+            <p class="mb-4">Rua Poti n188, Parque Pirajussara, <br /> Embu das Artes &mdash; São Paulo</p>
+
+            <p class="mb-0 font-weight-bold">WhatsApp</p>
+            <p class="mb-4"><a href="tel:+5511993949617">+55 11 9####-####</a></p>
+
+            <p class="mb-0 font-weight-bold">Endereço de E-mail</p>
+            <p class="mb-0"><a href="mailto:lavarapidorayanemarcio@gmail.com">lavarapidorayanemarcio@gmail.com</a></p>
+
           </div>
 
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-
-
-
-    <section class="site-section bg-light" id="contact-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-12 text-center">
-            <h3 class="section-sub-title">Contato</h3>
-            <h2 class="section-title mb-3">Nossos contatos</h2>
-          </div>
+  <a href="#" class="bg-primary py-5 d-block">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md10">
+          <h2 class="text-white">Ir para cima <i class="fa fa-arrow-up" aria-hidden="true"></i></h2>
         </div>
-        <div class="row">
-          <div class="col-md-7 mb-5">
+      </div>
+    </div>
+  </a>
 
-
-
-            <form action="#" class="p-5 bg-white">
-
-              <h2 class="h4 text-black mb-5">Formulário de Contato</h2>
-
-              <div class="row form-group">
-                <div class="col-md-6 mb-3 mb-md-0">
-                  <label class="text-black" for="fname">Nome</label>
-                  <input type="text" id="fname" class="form-control">
-                </div>
-                <div class="col-md-6">
-                  <label class="text-black" for="lname">Sobrenome</label>
-                  <input type="text" id="lname" class="form-control">
-                </div>
-              </div>
-
-              <div class="row form-group">
-
-                <div class="col-md-12">
-                  <label class="text-black" for="email">Email</label>
-                  <input type="email" id="email" class="form-control">
-                </div>
-              </div>
-
-              <div class="row form-group">
-
-                <div class="col-md-12">
-                  <label class="text-black" for="subject">Assunto</label>
-                  <input type="subject" id="subject" class="form-control">
-                </div>
-              </div>
-
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <label class="text-black" for="message">Mensagem</label>
-                  <textarea name="message" id="message" cols="30" rows="7" class="form-control"
-                    placeholder="Escreva alguma notação ou pergunta..."></textarea>
-                </div>
-              </div>
-
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <input type="submit" value="Enviar mensagem"
-                    class="btn btn-primary btn-md text-white btn-submit-form">
-                </div>
-              </div>
-
-
-            </form>
-          </div>
-          <div class="col-md-5">
-
-            <div class="p-4 mb-3 bg-white">
-              <p class="mb-0 font-weight-bold">Endereço</p>
-              <p class="mb-4">Rua Poti n188, Parque Pirajussara, <br /> Embu das Artes &mdash; São Paulo</p>
-
-              <p class="mb-0 font-weight-bold">WhatsApp</p>
-              <p class="mb-4"><a href="tel:+5511993949617">+55 11 9####-####</a></p>
-
-              <p class="mb-0 font-weight-bold">Endereço de E-mail</p>
-              <p class="mb-0"><a href="mailto:lavarapidorayanemarcio@gmail.com">lavarapidorayanemarcio@gmail.com</a></p>
-
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-5">
+              <h2 class="footer-heading mb-4">Sobre nós</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere laudantium magnam voluptatum
+                autem. Amet aliquid nesciunt veritatis aliquam.</p>
             </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <a href="#" class="bg-primary py-5 d-block">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md10">
-            <h2 class="text-white">Ir para cima <i class="fa fa-arrow-up" aria-hidden="true"></i></h2>
-          </div>
-        </div>
-      </div>
-    </a>
-
-    <footer class="site-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-9">
-            <div class="row">
-              <div class="col-md-5">
-                <h2 class="footer-heading mb-4">Sobre nós</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere laudantium magnam voluptatum
-                  autem. Amet aliquid nesciunt veritatis aliquam.</p>
-              </div>
-              <div class="col-md-3 ml-auto">
-                <h2 class="footer-heading mb-4">Links rápidos</h2>
-                <ul class="list-unstyled">
-                  <li><a href="#about-section">Local <i class="fa fa-map-marker" aria-hidden="true"></i></a></li>
-                  <li><a href="#services-section">Serviços</a></li>
-                  <!-- <li><a href="#">Avaliações</a></li> -->
-                  <li><a href="#contact-section">Contato</a></li>
-                </ul>
-              </div>
-              <div class="col-md-3">
-                <h2 class="footer-heading mb-4">Siga-nos</h2>
-                <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-                <!--<a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>-->
-                <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-                <!--<a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>-->
-              </div>
+            <div class="col-md-3 ml-auto">
+              <h2 class="footer-heading mb-4">Links rápidos</h2>
+              <ul class="list-unstyled">
+                <li><a href="#about-section">Local <i class="fa fa-map-marker" aria-hidden="true"></i></a></li>
+                <li><a href="#services-section">Serviços</a></li>
+                <!-- <li><a href="#">Avaliações</a></li> -->
+                <li><a href="#contact-section">Contato</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <h2 class="footer-heading mb-4">Siga-nos</h2>
+              <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
+              <!--<a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>-->
+              <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+              <!--<a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>-->
             </div>
           </div>
         </div>
-        <div class="row pt-5 mt-5 text-center">
-          <div class="col-md-12">
-            <div class="border-top pt-5">
-              <p>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;
-                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
-                with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
-                  target="_blank">Colorlib</a>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              </p>
-            </div>
-          </div>
-
-        </div>
       </div>
-    </footer>
+      <div class="row pt-5 mt-5 text-center">
+        <div class="col-md-12">
+          <div class="border-top pt-5">
+            <p>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;
+              <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
+              with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                target="_blank">Colorlib</a>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
 
   </div> <!-- .site-wrap -->
 
@@ -690,6 +764,9 @@
   <script src="js/aos.js"></script>
   <script src="js/jquery.fancybox.min.js"></script>
   <script src="js/jquery.sticky.js"></script>
+  <script type="text/javascript"
+  src="https://stc.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
   <script src="js/main.js"></script>
 

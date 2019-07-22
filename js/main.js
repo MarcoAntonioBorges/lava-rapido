@@ -273,3 +273,50 @@ jQuery(document).ready(function($) {
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3654.7810823132972!2d-46.8175628!3d-23.6480098!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce54a7e3ea9805%3A0xa3d787bf2c7ac2bd!2sR.+Poti%2C+188+-+Parque+Pirajussara%2C+Embu+das+Artes+-+SP%2C+05576-100!5e0!3m2!1spt-BR!2sbr!4v1563822670681!5m2!1spt-BR!2sbr" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
 
 */
+
+function pegaElementosFormAgendamento(){
+	var elementos = new Object();
+	elementos['nome_completo'] = $("#ag_nome_completo").val().trim();
+	elementos['cpf'] = $("#ag_cpf").val().trim();
+
+	return elementos
+}
+
+function erroFormAgendamento(campo){
+	Swal.fire({
+		title: 'Erro!',
+		text: `O campo "${campo}" não foi preenchido corretamente`,
+		type: 'error',
+		confirmButtonText: 'Corrigir'
+	})
+}
+
+function validaForm(){
+	var elementos = pegaElementosFormAgendamento();
+
+	if(elementos['nome_completo'] == ""){
+		erroFormAgendamento("Nome completo")
+		return false
+	}
+	if(elementos['cpf'] == ""){
+		erroFormAgendamento("CPF")
+		return false
+	}
+
+	return true
+}
+
+var confirmacaoAgendamento = document.querySelector("#confirmacao-agendamento");
+confirmacaoAgendamento.addEventListener('click', function(){
+	if(validaForm()){
+		console.log('Confirmacao feita para o servico de lava rapido');
+		Swal.fire({
+			title: 'Sucesso!',
+			text: 'Do you want to continue',
+			type: 'success',
+			confirmButtonText: 'Cool'
+		})
+	}else{
+		console.log('Preencha os campos necesarios');
+	}
+}); 
